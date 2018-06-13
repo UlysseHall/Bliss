@@ -1,0 +1,27 @@
+nav {
+    background: $blue;
+    width: 200px;
+    
+    
+        ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        height: 100vh;
+        li {
+        padding: 20px;
+        cursor: pointer;
+        a {
+        color: #fff;
+        svg{
+            padding: 5px 5px 0px 0px;
+        }
+        }
+        &:hover {
+            background: $blue-dark;
+        }
+        }
+    }
+    }
+    
