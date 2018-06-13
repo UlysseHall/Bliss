@@ -1,17 +1,37 @@
 {% extends "base.html" %}
 
 {% block style %}
-    <link rel="stylesheet" href="assets/css/Auth/login.css">
+
 {% endblock %}
 
 {% block body %}
-    <h1>Login</h1>
+    <div class="content-left">
+        <div class="logo">LOGO</div>
+    </div>
 
-    <a href="?action=register">Register</a><br><br>
+    <div class="content-right">
+        <div class="subscribe">
+            <a href="?action=register">
+                <button class="btn">Créer un compte</button>
+            </a>
+        </div>
+        <form method="post" action="?action=login">
+            <div class="input-group">
+                <h2>Se connecter</h2>
+                <div class="input-form">
+                    <input type="text" name="username" id="username" autocomplete="off">
+                    <label for="username">Identifiant</label>
+                    <span class="border-effect"></span>
+                </div>
+                <div class="input-form">
+                    <input type="password" name="password" id="password" autocomplete="off">
+                    <label for="password">Mot de passe</label>
+                    <span class="border-effect"></span>
+                </div>
+                <a href="">Mot de passe oublié ?</a>
+                <input type="submit" class="btn" value="Se connecter">
+            </div>
+        </form>
+    </div>
 
-    <form method="post" action="?action=login">
-        <input type="text" name="username" placeholder="username">
-        <input type="password" name="password" placeholder="password">
-        <input type="submit">
-    </form>
 {% endblock %}

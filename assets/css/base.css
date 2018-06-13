@@ -1,4 +1,169 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
 body {
-    background-color: #ecf0f1;
-    margin: 0;
-}
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  font-family: Avenir, sans-serif;
+  background: #f2f2f2;
+  color: #646A77;
+  display: flex; }
+
+.input-form {
+  position: relative;
+  width: calc(70%); }
+  .input-form input {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #b3b3b3;
+    width: 100%;
+    height: 5vh;
+    outline: none;
+    font: 20px "avenir";
+    letter-spacing: 1px;
+    color: #646A77;
+    position: relative;
+    z-index: 2; }
+    .input-form input:focus ~ label {
+      top: -3.5vh;
+      font-size: 16px;
+      color: #2e81e2; }
+    .input-form input:focus ~ .border-effect {
+      width: 100%; }
+  .input-form label {
+    font: 20px "avenir";
+    letter-spacing: 1px;
+    color: #b3b3b3;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s; }
+  .input-form .border-effect {
+    width: 0;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    background: #2e81e2;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s; }
+  .input-form.in label {
+    top: -3.5vh;
+    font-size: 16px;
+    color: #2e81e2; }
+  .input-form.in .border-effect {
+    width: 100%; }
+
+.btn {
+  width: 200px;
+  text-align: center;
+  background: #2e81e2;
+  border: 1px solid #2e81e2;
+  color: #fff;
+  padding: 10px 0;
+  outline: none;
+  font: 16px "avenir";
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s; }
+  .btn:hover {
+    background: #f2f2f2;
+    color: #2e81e2; }
+
+.content-left {
+  width: 50%;
+  height: 100vh;
+  background: #2e81e2;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .content-left .logo {
+    background: #fff;
+    width: 180px;
+    height: 180px;
+    font: 30px "avenir";
+    font-weight: bold;
+    text-align: center; }
+
+.content-right {
+  width: 50%;
+  height: 100vh; }
+  .content-right .subscribe {
+    display: flex;
+    justify-content: flex-end;
+    margin: 5vh 5vw 0 0; }
+  .content-right .input-group {
+    padding: 15vh 5vw; }
+    .content-right .input-group h2 {
+      font: 30px "avenir";
+      font-weight: bold;
+      letter-spacing: 4.02px; }
+    .content-right .input-group .input-form {
+      margin: 6vh 0 0; }
+      .content-right .input-group .input-form:first-of-type {
+        margin: 8vh 0 0; }
+    .content-right .input-group a {
+      display: block;
+      font: 18px "avenir";
+      font-weight: bold;
+      letter-spacing: 1.47px;
+      margin: 4vh 0;
+      text-decoration: none;
+      color: #646A77; }
+
+/*# sourceMappingURL=base.css.map */

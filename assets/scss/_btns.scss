@@ -1,0 +1,24 @@
+.btn {
+    width: 200px;
+    text-align: center;
+    background: $blue;
+    border: 1px solid $blue;
+    color: $white;
+    padding: 10px 0;
+    outline: none;
+    font: 16px "avenir";
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+
+    &:hover {
+        background: $grey;
+        color: $blue;
+    }
+
+}

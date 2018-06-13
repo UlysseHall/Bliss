@@ -1,0 +1,48 @@
+.content-left {
+    width: 50%;
+    height: 100vh;
+    background: $blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .logo {
+        background: $white;
+        width: 180px;
+        height: 180px;
+        font: 30px "avenir";
+        font-weight: bold;
+        text-align: center;
+    }
+}
+.content-right {
+    width: 50%;
+    height: 100vh;
+    .subscribe {
+        display: flex;
+        justify-content: flex-end;
+        margin: 5vh 5vw 0 0;
+    }
+    .input-group {
+        padding: 15vh 5vw;
+        h2 {
+            font: 30px "avenir";
+            font-weight: bold;
+            letter-spacing: 4.02px;
+        }
+        .input-form {
+            margin: 6vh 0 0;
+            &:first-of-type {
+                margin: 8vh 0 0;
+            }
+        }
+        a {
+            display: block;
+            font: 18px "avenir";
+            font-weight: bold;
+            letter-spacing: 1.47px;
+            margin: 4vh 0;
+            text-decoration: none;
+            color: $black;
+        }
+    }
+}
