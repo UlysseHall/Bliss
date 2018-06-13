@@ -1,0 +1,17 @@
+{
+    "name": "ulysse/bliss",
+    "authors": [
+        {
+            "name": "Ulysse Hall",
+            "email": "ulysse.hall@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^2.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Controllers\\": "controllers/"
+        }
+    }
+}
