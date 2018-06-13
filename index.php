@@ -47,6 +47,12 @@ if($connected) {
                 break;
 
             case 'homeAction':
+            case 'agendaAction':
+            case 'productListAction':
+            case 'productDetailAction':
+            case 'customerListAction':
+            case 'customerDetailAction':
+            case 'commandAction':
                 $controller = new AppController();
                 $controller->{$action}($twig, $bdd);
                 break;
