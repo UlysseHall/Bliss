@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block style %}
+    <link rel="stylesheet" href="assets/css/Auth/login.css">
+{% endblock %}
+
+{% block body %}
+    <h1>Login</h1>
+
+    <a href="?action=register">Register</a><br><br>
+
+    <form method="post" action="?action=login">
+        <input type="text" name="username" placeholder="username">
+        <input type="password" name="password" placeholder="password">
+        <input type="submit">
+    </form>
+{% endblock %}
