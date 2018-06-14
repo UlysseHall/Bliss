@@ -62,6 +62,40 @@ class AppController {
         ]);
     }
 
+    function addCustomer($bdd) {
+        $nameCompany = "coca";
+        $name = 'lucas';
+        $companyStatus = 'SARL';
+        $phoneCompany = '06666666';
+        $address = '3 rue bidon';
+        $addressBilling = '3 rue thunes';
+        $phone = '07777777';
+        $email = 'oui@gmail.com';
+        $prospect = 0;
+
+        $req = $bdd->prepare("
+            INSERT INTO
+            customer(user_id, name, name_company, location, phone, phone_company, address, address_billing, email, prospect, company_status)
+            VALUES (:userId, :name, :nameCompany, :location, :phone, :phoneCompany, :address, :addressBilling, :email, :prospect, :companyStatus)
+         ");
+
+        $req->execute([
+            'userId' => $_SESSION['user_id'],
+            'name' => $name,
+            'nameCompany' => $nameCompany,
+            'location' => $address,
+            'phone' => $phone,
+            'phoneCompany' => $phoneCompany,
+            'address' => $address,
+            'addressBilling' => $addressBilling,
+            'email' => $email,
+            'prospect' => $prospect,
+            'companyStatus' => $companyStatus
+        ]);
+
+        return true;
+    }
+
     function customerListAction($twig, $bdd) {
         $customerRep = new customerRepository();
 
