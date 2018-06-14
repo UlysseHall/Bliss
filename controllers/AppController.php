@@ -31,7 +31,11 @@ class AppController {
     }
 
     function agendaAction($twig, $bdd) {
-        echo $twig->render('App/agenda.html');
+        $meetingRep = new meetingRepository();
+
+        $meetings = $meetingRep->getMonthlyMeetings($bdd);
+
+        echo $twig->render('App/agenda.html', ['meetings' => $meetings]);
     }
 
     function commandAction($twig, $bdd) {
