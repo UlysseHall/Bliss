@@ -9,7 +9,7 @@ use Controllers\AuthController;
 // BDD
 try
 {
-    $bdd = new PDO('mysql:host=localhost;dbname=bliss;charset=utf8', 'root', 'root');
+    $bdd = new PDO('mysql:host=localhost;dbname=bliss;charset=utf8', 'root', '');
 }
 catch(Exception $e)
 {
