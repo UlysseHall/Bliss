@@ -118,7 +118,7 @@
 
             <div class="btns-opt">
                 <button class="btn">Filtrer</button>
-                <button class="btn">+ Ajouter client</button>
+                <button class="btn btn-modal">+ Ajouter client</button>
             </div>
 
             <div class="consult-table">
@@ -263,4 +263,130 @@
         </div>
 
     </div>
+
+    <div id="myModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Ajout d'un client</h2>
+        </div>
+        <div class="modal-body">
+            <div class="modal-body-left">
+                <div class="search input-form">
+                    <input type="text" name="name" id="name" tabindex="1" value="" autocomplete="off">
+                    <label for="name">Nom de l'enseigne</label>
+                    <span class="border-effect"></span>
+                </div>
+                <div class="search input-form">
+                    <input type="text" name="social" id="social" tabindex="1" value="" autocomplete="off">
+                    <label for="social">Raison sociale</label>
+                    <span class="border-effect"></span>
+                </div>
+                <div class="search input-form">
+                    <input type="text" name="location" id="location" tabindex="1" value="" autocomplete="off">
+                    <label for="location">Adresse de l'enseigne</label>
+                    <span class="border-effect"></span>
+                </div>
+                <div class="search input-form">
+                    <input type="text" name="numberPhone" id="numberPhone" tabindex="1" value="" autocomplete="off">
+                    <label for="numberPhone">N° de téléphone</label>
+                    <span class="border-effect"></span>
+                </div>
+            </div>
+            <div class="modal-body-right">
+                <div class="search input-form">
+                    <input type="text" name="managerName" id="managerName" tabindex="1" value="" autocomplete="off">
+                    <label for="managerName">Nom du gérant</label>
+                    <span class="border-effect"></span>
+                </div>
+                <div class="search input-form">
+                    <input type="text" name="commercialNumber" id="commercialNumber" tabindex="1" value="" autocomplete="off">
+                    <label for="commercialNumber">Numéro commercial</label>
+                    <span class="border-effect"></span>
+                </div>
+                <div class="search input-form">
+                    <input type="text" name="paymentAddress" id="paymentAddress" tabindex="1" value="" autocomplete="off">
+                    <label for="paymentAddress">Adresse de facturation</label>
+                    <span class="border-effect"></span>
+                </div>
+                <div class="search input-form">
+                    <input type="email" name="email" id="email" tabindex="1" value="" autocomplete="off">
+                    <label for="email">Email</label>
+                    <span class="border-effect"></span>
+                </div>
+            </div>
+            <div class="submit-customers">
+                <input type="submit" class="btn">
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script>
+        var inputEffect = function() {
+            var inputs = document.querySelectorAll(".input-form input");
+            var inputgroups = document.querySelectorAll(".input-form");
+
+            if (inputs !== null) {
+                for (let i = 0; i < inputs.length; i++) {
+                    var input = inputs[i];
+
+                    if (input.value.length !== 0) {
+                        inputgroups[i].classList.add("in");
+                    }
+
+                    inputs[i].addEventListener("input", function () {
+                        if ( inputs[i].value.length === 0 ) {
+                            inputgroups[i].classList.remove("in");
+                        } else {
+                            inputgroups[i].classList.add("in");
+                        }
+                    });
+                    inputs[i].addEventListener("blur", function () {
+                        if ( inputs[i].value.length === 0 ) {
+                            inputgroups[i].classList.remove("in");
+                        }
+                    });
+                    inputs[i].addEventListener("click", function () {
+                        inputgroups[i].classList.add("in");
+                    });
+                }
+            }
+        };
+        var modalAddCustomer = function () {
+            var modal = document.querySelector('.modal');
+            var btn = document.querySelector(".btn-modal");
+            var span = document.querySelector(".close");
+
+            btn.addEventListener("click", function () {
+                document.body.classList.add("modal-open");
+            });
+            span.addEventListener("click", function () {
+                document.body.classList.remove("modal-open");
+                document.body.classList.add("modal-close");
+            });
+            window.addEventListener("click", function (event) {
+                if (event.target == modal) {
+                    document.body.classList.remove("modal-open");
+                    document.body.classList.add("modal-close");
+                }
+            });
+        };
+
+        var App = function () {
+
+            return {
+                init: function () {
+                    inputEffect();
+                    modalAddCustomer();
+                }
+            }
+
+        }();
+
+        window.onload = function () {
+            App.init();
+        };
+
+    </script>
 {% endblock %}
