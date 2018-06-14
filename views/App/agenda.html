@@ -1,9 +1,14 @@
 {% extends "layout.html" %}
 
-{% block css %}
-    <link rel="stylesheet" href="assets/css/App/agenda.css">
-{% endblock %}
-
 {% block content %}
-    <h1>Agenda</h1>
+<section class="agenda">
+        <div class="welcome-agenda">
+                <h1>Agenda</h1>
+                <span class="rectangle"></span>
+            </div>
+    
+    <div id='calendar'></div>
+</section>
+
+
 {% endblock %}

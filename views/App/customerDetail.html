@@ -1,9 +1,103 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} {% block content %}
+<div class="customer-detail">
+    <div class="welcome-customer-detail">
+        <h1>Milan Lunetier</h1>
+        <span class="rectangle"></span>
+    </div>
+    <div class="two-part">
+        <section class="card">
+            <h2>Nombre de produits vendus</h2>
+            <h3>MARS 2018</h3>
+            <p class="sales-number">82</p>
+            <span>+20%</span>
+        </section>
+        <section class="card">
+            <h2>Fréquence</h2>
+            <img src="assets/img/graph.png" alt="">
+        </section>
+    </div>
 
-{% block css %}
-    <link rel="stylesheet" href="assets/css/App/customerDetail.css">
-{% endblock %}
 
-{% block content %}
-    <h1>Détails client</h1>
+    <div class="one-part">
+        <section class="visit-report">
+            <div class="card">
+                <h2>Rapport de visite</h2>
+                <table class="visit-report-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Heure</th>
+                            <th>Rapport</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>11/12/2018</td>
+                            <td>10:30</td>
+                            <td>Rendez-vous à 200 pièces, excellent retour du client concernant la nouvelle collection. Prise
+                                de rendez-vous pour le mois de Juillet, afin de présenter la nouvelle collection solaire.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>09/12/2018</td>
+                            <td>11:30</td>
+                            <td>Rendez-vous avec l’assistante, n’a pas commandé car doit faire un retour…
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>08/12/2018</td>
+                            <td>08:30</td>
+                            <td>Rendez-vous non concluant, car stock plein
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="one-part">
+        <section class="order-report">
+            <div class="card">
+                <h2>Rapport de commandes</h2>
+                <table class="order-report-table card">
+                    <thead>
+                        <tr>
+                            <th>Client</th>
+                            <th>Coli</th>
+                            <th>Date d'envoi</th>
+                            <th>État</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Milan Lunetier</td>
+                            <td>3190</td>
+                            <td>08/12/2018</td>
+                            <td class="done">Livré</td>
+
+                        </tr>
+                        <tr>
+                            <td>Optic 2000</td>
+                            <td>3192</td>
+                            <td>09/12/2018</td>
+                            <td class="doing">En cours</td>
+                        </tr>
+                        <tr>
+                            <td>Optic 2000</td>
+                            <td>3190</td>
+                            <td>09/12/2018</td>
+                            <td class="inprogress">En traitement</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </div>
+</div>
+
 {% endblock %}
