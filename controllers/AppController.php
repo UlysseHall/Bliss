@@ -6,6 +6,7 @@ use Repository\meetingRepository;
 use Repository\orderRepository;
 use Repository\customerRepository;
 use Repository\reportRepository;
+use Repository\productRepository;
 
 class AppController {
 
@@ -70,7 +71,13 @@ class AppController {
     }
 
     function productListAction($twig, $bdd) {
-        echo $twig->render('App/productList.html');
+        $productRep = new productRepository();
+
+        $products = $productRep->getProducts($bdd);
+
+        echo $twig->render('App/productList.html', [
+            'products' => $products
+        ]);
     }
 
 }
