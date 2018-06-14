@@ -1,0 +1,104 @@
+.customers-prospects {
+    width: 100%;
+    .btns-opt {
+        display: flex;
+        justify-content: flex-end;
+        margin: 3vh 4vw 0;
+        button {
+            margin: 0 1vw;
+            &:first-of-type {
+                background: $white;
+                color: $black;
+                border: none;
+                width: 130px;
+                -webkit-box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.5);
+                -moz-box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.5);
+                box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.5);
+                -webkit-border-radius: 2px;
+                -moz-border-radius: 2px;
+                border-radius: 2px;
+            }
+            &:last-of-type {
+                -webkit-border-radius: 2px;
+                -moz-border-radius: 2px;
+                border-radius: 2px;
+                -webkit-box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.5);
+                -moz-box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.5);
+                box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.5);
+                &:hover {
+                    background: $blue-dark;
+                    color: $white;
+                }
+            }
+        }
+    }
+    .consult-table {
+        .tab {
+            display: flex;
+            justify-content: flex-start;
+            margin: 2vh 3vw 0;
+        }
+        &__list {
+            display: flex;
+            .table {
+                width: 75vw;
+                margin: 2vh 1vw 0 3vw;
+                background: transparent;
+                -webkit-border-radius: 0;
+                -moz-border-radius: 0;
+                border-radius: 0;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+                thead {
+                    background: $grey;
+                    color: $grey-dark;
+                    font: 18px "avenir";
+                    font-weight: 700;
+                    letter-spacing: 1px;
+                    text-align: left;
+                    text-transform: uppercase;
+                    tr {
+                        height: 3vh;
+                        th {
+                            &:first-of-type {
+                                padding: 1.5vh 0 1.5vh 2vw;
+                            }
+                            padding: 0 0 1vh;
+                        }
+                    }
+                }
+                tbody {
+                    tr {
+                        background: $white;
+                        td {
+                            border-bottom: 1.5vh solid $grey;
+                            padding: 1.5vh 0;
+                            font: 18px "avenir";
+                            font-weight: 500;
+                            &:first-of-type {
+                                padding: 1.5vh 0 1.5vh 2vw;
+                            }
+                        }
+                    }
+                }
+            }
+            .filter-letter {
+                background: $white;
+                width: 2vw;
+                margin: 7.7vh 0 0;
+                padding: 1vh 0;
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    li {
+                        padding: 0.1vh 0;
+                        text-align: center;
+                        font: 15px "avenir";
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+}

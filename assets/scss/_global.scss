@@ -1,0 +1,19 @@
+$blue: #2e81e2;
+$blue-dark: #2b78d0;
+$yellow: #f5c338;
+$pink: #ee608f;
+$green: #3aebad;
+$black: #646A77;
+$white: #fff;
+$grey: #f2f2f2;
+$grey-dark: #b0b4b8;
+
+body {
+    font-family: Avenir, sans-serif;
+    background: $grey;
+    color: $black;
+    display: flex;
+    .right {
+        width: 100%;
+    }
+}
