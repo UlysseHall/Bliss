@@ -1,0 +1,25 @@
+section.clients {
+    tbody {
+        tr {
+            td {
+                
+
+            &.done {
+            color: $blue;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            }
+            &.doing {
+            color: $yellow;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            }
+            &.failed {
+            color: $pink;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            }
+        }
+        }
+    }
+}

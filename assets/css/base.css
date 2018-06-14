@@ -47,8 +47,10 @@ body {
   background: #f2f2f2;
   color: #646a77;
   display: flex; }
+  body .left {
+    width: 15%; }
   body .right {
-    width: 100%; }
+    width: 85%; }
     body .right .welcome {
       width: 100%;
       height: 100px;
@@ -66,11 +68,11 @@ body {
         left: 17px;
         width: 212px;
         height: 14px;
-        background: #f5c338; }
+        background: #fed978; }
     body .right .wrapper {
       display: flex;
       flex-flow: row wrap;
-      margin: 50px; }
+      margin: 10vh 3vw 0; }
       body .right .wrapper h2 {
         text-transform: uppercase;
         font-size: 15px; }
@@ -81,12 +83,71 @@ body {
   body ul {
     list-style-type: none; }
 
+.input-form {
+  position: relative;
+  width: calc(70%); }
+  .input-form input {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #b3b3b3;
+    width: 100%;
+    height: 5vh;
+    outline: none;
+    font: 20px "avenir";
+    letter-spacing: 1px;
+    color: #646a77;
+    position: relative;
+    z-index: 2; }
+    .input-form input:focus ~ label {
+      top: -3.5vh;
+      font-size: 16px;
+      color: #2e81e2; }
+    .input-form input:focus ~ .border-effect {
+      width: 100%; }
+  .input-form label {
+    font: 20px "avenir";
+    letter-spacing: 1px;
+    color: #b3b3b3;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s; }
+  .input-form .border-effect {
+    width: 0;
+    height: 1px;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    z-index: 2;
+    background: #2e81e2;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s; }
+  .input-form.in label {
+    top: -3.5vh;
+    font-size: 16px;
+    color: #2e81e2; }
+  .input-form.in .border-effect {
+    width: 100%; }
+
 header {
   display: flex;
   align-items: baseline;
-  justify-content: center;
+  justify-content: flex-start;
   background: #fff;
-  padding: 20px 0 15px 0; }
+  position: fixed;
+  left: 15%;
+  width: 100%;
+  height: 55px; }
   header .search {
     display: flex;
     padding-left: 50px; }
@@ -97,8 +158,9 @@ header {
       border-bottom: none;
       background: transparent;
       width: 100%;
+      height: 100%;
       outline: none;
-      font: 20px;
+      font: 20px "avenir";
       letter-spacing: 1px;
       color: #646a77;
       z-index: 2; }
@@ -113,29 +175,17 @@ header {
       font-size: inherit;
       overflow: hidden; }
   header .user-info {
-    flex-grow: 3;
-    display: flex;
-    justify-content: flex-end;
-    text-align: right;
-    padding-right: 10px; }
-    header .user-info .usr-img {
-      margin-left: 15px;
-      background: #2e81e2;
-      color: #fff;
-      width: 30px;
-      height: 30px;
-      border-radius: 30px;
-      display: inline-block;
-      text-align: center;
-      padding-top: calc(1%);
-      font-size: 20px;
-      font-weight: 700; }
-      header .user-info .usr-img:hover {
+    position: fixed;
+    right: 1vw; }
+    header .user-info svg {
+      margin-top: 10px; }
+      header .user-info svg:hover {
         background: #ee608f;
         cursor: pointer; }
   header .input-form {
     position: relative;
-    width: calc(70%); }
+    width: calc(70%);
+    height: 55px; }
     header .input-form input {
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
@@ -143,9 +193,8 @@ header {
       border: none;
       background: transparent;
       width: 100%;
-      height: 5vh;
       outline: none;
-      font: 20px "avenir";
+      font: 20px;
       letter-spacing: 1px;
       color: #646a77;
       position: relative;
@@ -161,7 +210,7 @@ header {
       letter-spacing: 1px;
       color: #b3b3b3;
       position: absolute;
-      top: 0;
+      top: 14px;
       z-index: 1;
       -webkit-transition: 0.4s;
       -moz-transition: 0.4s;
@@ -209,7 +258,7 @@ header {
     float: right; }
 
 .weekdays {
-  padding: 10px 15px;
+  padding: 10px 40px;
   display: flex;
   justify-content: space-around; }
   .weekdays li {
@@ -217,8 +266,9 @@ header {
     text-align: center; }
 
 .days {
-  padding: 15px 15px; }
+  padding: 15px 50px; }
   .days li {
+    position: relative;
     cursor: pointer;
     width: 45px;
     height: 45px;
@@ -230,12 +280,21 @@ header {
     font-size: 13px;
     font-weight: 700; }
     .days li:hover {
-      background: #f5c338;
+      background: #fed978;
       color: #fff; }
     .days li.active {
       background: #ee608f;
       box-shadow: 0 6px 11px 0 rgba(254, 120, 243, 0.24);
       color: #fff; }
+    .days li span.appointment {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      bottom: 0;
+      left: 18px;
+      border-radius: 5px;
+      background: #ee608f;
+      box-shadow: 0 6px 11px 0 rgba(254, 120, 243, 0.24); }
 
 .two-part {
   display: flex;
@@ -247,7 +306,8 @@ header {
     width: 48.5%; }
 
 .one-part {
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 20px; }
 
 .card {
   background: #fff;
@@ -271,7 +331,7 @@ header {
       padding: 20px 15px;
       text-align: left;
       font-weight: 500;
-      font-size: 12px;
+      font-size: 15px;
       color: #646a77;
       border-bottom: 1px solid #f2f2f2;
       text-transform: uppercase; }
@@ -284,7 +344,7 @@ header {
       text-align: left;
       vertical-align: middle;
       font-weight: 300;
-      font-size: 12px;
+      font-size: 15px;
       color: #646a77;
       border-bottom: solid 1px rgba(255, 255, 255, 0.1); }
 
@@ -335,32 +395,108 @@ header {
           transform: translate(-50%);
           font-size: 22px; }
 
-nav {
+section.clients tbody tr td.done {
+  color: #2e81e2;
+  font-weight: 700;
+  letter-spacing: 0.8px; }
+section.clients tbody tr td.doing {
+  color: #fed978;
+  font-weight: 700;
+  letter-spacing: 0.8px; }
+section.clients tbody tr td.failed {
+  color: #ee608f;
+  font-weight: 700;
+  letter-spacing: 0.8px; }
+
+div.left nav {
   background: #2e81e2;
-  width: 200px; }
-  nav ul {
+  position: fixed;
+  width: 15%; }
+  div.left nav img {
+    width: 63%;
+    margin-left: 17%;
+    margin-bottom: 10%;
+    margin-top: 10%; }
+  div.left nav ul {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-content: center;
+    margin-top: 100px 20px;
     height: 100vh; }
-    nav ul li {
+    div.left nav ul li {
       padding: 20px;
       cursor: pointer; }
-      nav ul li a {
+      div.left nav ul li a {
         color: #fff; }
-        nav ul li a svg {
+        div.left nav ul li a svg {
           padding: 5px 5px 0px 0px; }
-      nav ul li:hover {
+      div.left nav ul li:hover {
+        background: #4293f0; }
+      div.left nav ul li.nav-active {
         background: #2b78d0; }
 
 .today-appointment {
   width: 100%;
-  margin: 15px; }
+  margin: 15px;
+  overflow: scroll;
+  max-height: 300px; }
+  .today-appointment h2 {
+    font: 34px "avenir";
+    font-weight: 700;
+    color: #646a77; }
+  .today-appointment h3 {
+    margin: 40px 35px;
+    font: 15px "avenir"; }
+    .today-appointment h3 span.today--rdv {
+      font-weight: 700;
+      color: #2e81e2; }
   .today-appointment ul {
-    margin-top: 15px; }
+    margin: 15px 35px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%; }
     .today-appointment ul li {
       display: flex;
-      flex-direction: row; }
+      flex-direction: row;
+      justify-content: flex-start;
+      align-content: center;
+      align-items: center;
+      margin-bottom: 15px;
+      width: 80%; }
+      .today-appointment ul li .heure-rdv,
+      .today-appointment ul li .client-rdv {
+        font-weight: 500;
+        margin-right: 10px; }
+      .today-appointment ul li .itineraire {
+        background: #fff;
+        color: #2e81e2;
+        border: 1px solid #2e81e2;
+        border-radius: 20px;
+        text-align: center;
+        margin-left: 14px;
+        padding: 5px 15px; }
+        .today-appointment ul li .itineraire:hover {
+          background: #2e81e2;
+          color: #fff; }
+      .today-appointment ul li div.puce {
+        color: transparent;
+        margin-right: 15px;
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        background: #fed978;
+        box-shadow: 0 2px 11px 0 rgba(254, 191, 211, 0.61); }
+      .today-appointment ul li div.puce--next {
+        color: transparent;
+        margin-right: 15px;
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        background: #fff;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1); }
 
 /*# sourceMappingURL=base.css.map */
