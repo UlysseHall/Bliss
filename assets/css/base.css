@@ -322,13 +322,31 @@ header {
     font-weight: 700;
     letter-spacing: 0.8px; }
 
-.clients {
+.clients,
+.visit-report,
+.order-report {
   margin-top: 15px; }
-  .clients .table {
+  .clients .table,
+  .clients .visit-report-table,
+  .clients .order-report-table,
+  .visit-report .table,
+  .visit-report .visit-report-table,
+  .visit-report .order-report-table,
+  .order-report .table,
+  .order-report .visit-report-table,
+  .order-report .order-report-table {
     border-radius: 10px;
     background: #fff;
     width: 100%; }
-    .clients .table thead th {
+    .clients .table thead th,
+    .clients .visit-report-table thead th,
+    .clients .order-report-table thead th,
+    .visit-report .table thead th,
+    .visit-report .visit-report-table thead th,
+    .visit-report .order-report-table thead th,
+    .order-report .table thead th,
+    .order-report .visit-report-table thead th,
+    .order-report .order-report-table thead th {
       background: #fff;
       padding: 20px 15px;
       text-align: left;
@@ -337,11 +355,35 @@ header {
       color: #646a77;
       border-bottom: 1px solid #f2f2f2;
       text-transform: uppercase; }
-      .clients .table thead th:first-of-type {
+      .clients .table thead th:first-of-type,
+      .clients .visit-report-table thead th:first-of-type,
+      .clients .order-report-table thead th:first-of-type,
+      .visit-report .table thead th:first-of-type,
+      .visit-report .visit-report-table thead th:first-of-type,
+      .visit-report .order-report-table thead th:first-of-type,
+      .order-report .table thead th:first-of-type,
+      .order-report .visit-report-table thead th:first-of-type,
+      .order-report .order-report-table thead th:first-of-type {
         border-radius: 5px 0 0 0; }
-      .clients .table thead th:last-of-type {
+      .clients .table thead th:last-of-type,
+      .clients .visit-report-table thead th:last-of-type,
+      .clients .order-report-table thead th:last-of-type,
+      .visit-report .table thead th:last-of-type,
+      .visit-report .visit-report-table thead th:last-of-type,
+      .visit-report .order-report-table thead th:last-of-type,
+      .order-report .table thead th:last-of-type,
+      .order-report .visit-report-table thead th:last-of-type,
+      .order-report .order-report-table thead th:last-of-type {
         border-radius: 0 5px 0 0; }
-    .clients .table td {
+    .clients .table td,
+    .clients .visit-report-table td,
+    .clients .order-report-table td,
+    .visit-report .table td,
+    .visit-report .visit-report-table td,
+    .visit-report .order-report-table td,
+    .order-report .table td,
+    .order-report .visit-report-table td,
+    .order-report .order-report-table td {
       padding: 15px;
       text-align: left;
       vertical-align: middle;
@@ -349,6 +391,15 @@ header {
       font-size: 15px;
       color: #646a77;
       border-bottom: solid 1px rgba(255, 255, 255, 0.1); }
+  .clients .visit-report-table th:last-child,
+  .visit-report .visit-report-table th:last-child,
+  .order-report .visit-report-table th:last-child {
+    width: 60%; }
+  .clients .visit-report-table td,
+  .visit-report .visit-report-table td,
+  .order-report .visit-report-table td {
+    padding: 20px 15px 30px 15px;
+    border-bottom: 1px solid #f2f2f2; }
 
 .top-clients {
   margin-top: 15px; }
@@ -406,16 +457,24 @@ header {
           transform: translate(-50%);
           font-size: 22px; }
 
-section.clients tbody tr td.done {
+section.clients tbody tr td.done,
+section.order-report tbody tr td.done {
   color: #2e81e2;
   font-weight: 700;
   letter-spacing: 0.8px; }
-section.clients tbody tr td.doing {
+section.clients tbody tr td.doing,
+section.order-report tbody tr td.doing {
   color: #f5c338;
   font-weight: 700;
   letter-spacing: 0.8px; }
-section.clients tbody tr td.failed {
+section.clients tbody tr td.failed,
+section.order-report tbody tr td.failed {
   color: #ee608f;
+  font-weight: 700;
+  letter-spacing: 0.8px; }
+section.clients tbody tr td.inprogress,
+section.order-report tbody tr td.inprogress {
+  color: #909090;
   font-weight: 700;
   letter-spacing: 0.8px; }
 
@@ -577,65 +636,71 @@ section.agenda div#calendar {
     border: none;
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1); }
 
-div.customer-detail .welcome-customer-detail {
-  width: 100%;
-  height: 100px;
-  position: relative; }
-  div.customer-detail .welcome-customer-detail h1 {
-    position: absolute;
-    font-size: 30px;
-    font-weight: 700;
-    color: #646a77;
-    margin: 30px 15px;
-    z-index: 3000; }
-  div.customer-detail .welcome-customer-detail span.rectangle {
-    position: absolute;
-    top: 50px;
-    left: 17px;
-    width: 150px;
-    height: 14px;
-    background: #f5c338; }
-div.customer-detail .two-part {
-  width: 100%; }
-  div.customer-detail .two-part section.card {
+div.customer-detail {
+  width: 94%; }
+  div.customer-detail .welcome-customer-detail {
+    width: 100%;
+    height: 100px;
+    position: relative; }
+    div.customer-detail .welcome-customer-detail h1 {
+      position: absolute;
+      font-size: 30px;
+      font-weight: 700;
+      color: #646a77;
+      margin: 30px 15px;
+      z-index: 3000; }
+    div.customer-detail .welcome-customer-detail span.rectangle {
+      position: absolute;
+      top: 50px;
+      left: 17px;
+      width: 150px;
+      height: 14px;
+      background: #f5c338; }
+  div.customer-detail .one-part .visit-report h2,
+  div.customer-detail .one-part .order-report h2 {
     padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; }
-    div.customer-detail .two-part section.card .sales-number {
-      font: 40px "avenir";
-      font-weight: 900;
-      color: #2e81e2;
-      letter-spacing: 1px; }
-    div.customer-detail .two-part section.card img {
-      width: 100%; }
-    div.customer-detail .two-part section.card h2 {
-      font: 20 "avenir";
-      font-weight: 900;
-      letter-spacing: 1px; }
-    div.customer-detail .two-part section.card .product-sale {
-      background: red; }
-      div.customer-detail .two-part section.card .product-sale h2 {
+    font: 20px "avenir"; }
+  div.customer-detail .two-part {
+    width: 100%; }
+    div.customer-detail .two-part section.card {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center; }
+      div.customer-detail .two-part section.card .sales-number {
+        font: 40px "avenir";
+        font-weight: 900;
+        color: #a9f0ea;
+        letter-spacing: 1px; }
+      div.customer-detail .two-part section.card img {
+        width: 100%; }
+      div.customer-detail .two-part section.card h2 {
         font: 20 "avenir";
         font-weight: 900;
         letter-spacing: 1px; }
-  div.customer-detail .two-part div.product-sale {
-    height: 300px; }
-    div.customer-detail .two-part div.product-sale .product-sale-detail {
-      width: 225.5px;
-      height: 55px;
-      font-family: Avenir;
-      font-size: 40px;
-      font-weight: 900;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: normal;
-      letter-spacing: normal;
-      text-align: center;
-      color: #646a77; }
-    div.customer-detail .two-part div.product-sale .evolution {
-      float: right;
-      font-size: 20px; }
+      div.customer-detail .two-part section.card .product-sale {
+        background: red; }
+        div.customer-detail .two-part section.card .product-sale h2 {
+          font: 20 "avenir";
+          font-weight: 900;
+          letter-spacing: 1px; }
+    div.customer-detail .two-part div.product-sale {
+      height: 300px; }
+      div.customer-detail .two-part div.product-sale .product-sale-detail {
+        width: 225.5px;
+        height: 55px;
+        font-family: Avenir;
+        font-size: 40px;
+        font-weight: 900;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #646a77; }
+      div.customer-detail .two-part div.product-sale .evolution {
+        float: right;
+        font-size: 20px; }
 
 /*# sourceMappingURL=base.css.map */

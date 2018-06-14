@@ -1,4 +1,5 @@
     div.customer-detail {
+    width: 94%;
     .welcome-customer-detail {
         width: 100%;
         height: 100px;
@@ -20,24 +21,33 @@
         background: $yellow;
         }
     }
+    .one-part{
+        .visit-report,
+        .order-report{
+            h2{
+                padding: 15px;  
+                font: 20px "avenir";
+            }
+        }
+    }
 
     .two-part {
         width: 100%;
 
         section.card {
-            padding: 15px;
-            display: flex;
-            flex-direction:column;
-            justify-content: center;
-            align-items: center;
-        
-        .sales-number{
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        .sales-number {
             font: 40px "avenir";
             font-weight: 900;
-            color: $blue;
+            color: #a9f0ea;
             letter-spacing: 1px;
         }
-        img{
+        img {
             width: 100%;
         }
         h2 {
