@@ -35,7 +35,11 @@ class AppController {
     }
 
     function commandAction($twig, $bdd) {
-        echo $twig->render('App/command.html');
+        $orderRep = new orderRepository();
+
+        $orders = $orderRep->getOrders($bdd);
+
+        echo $twig->render('App/command.html', ['orders' => $orders]);
     }
 
     function customerDetailAction($twig, $bdd) {
