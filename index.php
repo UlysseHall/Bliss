@@ -24,7 +24,7 @@ $twig = new Twig_Environment($loader, array(
 
 // Test if connected
 $connected = false;
-if(isset($_SESSION['connected']) && $_SESSION['connected'] === true) {
+if(isset($_SESSION['user_id']) && $_SESSION['user_id']) {
     $connected = true;
 } else {
     $controller = new AuthController();

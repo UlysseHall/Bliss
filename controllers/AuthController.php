@@ -2,6 +2,8 @@
 
 namespace Controllers;
 
+use Repository\userRepository;
+
 class AuthController {
 
     function loginAction($twig, $bdd) {
@@ -14,7 +16,10 @@ class AuthController {
             ]);
 
             if($req->fetch()) {
-                $_SESSION['connected'] = true;
+                $rep = new userRepository();
+                $id = $rep->getIdByName($bdd, $_POST['username']);
+                $_SESSION['user_id'] = intval($id);
+
                 header('Location: ?action=home');
             } else {
                 header('Location: ?action=login');
@@ -51,7 +56,10 @@ class AuthController {
                 'password' => md5($_POST['password'])
             ]);
 
-            $_SESSION['connected'] = true;
+            $rep = new userRepository();
+            $id = $rep->getIdByName($bdd, $_POST['username']);
+            $_SESSION['user_id'] = intval($id);
+
             header('Location: ?action=home');
         } else {
             echo $twig->render('Auth/register.html');

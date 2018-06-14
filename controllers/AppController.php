@@ -2,10 +2,30 @@
 
 namespace Controllers;
 
+use Repository\meetingRepository;
+use Repository\orderRepository;
+use Repository\customerRepository;
+
 class AppController {
 
     function homeAction($twig, $bdd) {
-        echo $twig->render('App/home.html');
+        $meetingRep = new meetingRepository();
+        $orderRep = new orderRepository();
+        $customerRep = new customerRepository();
+
+        $dailyMeetings = $meetingRep->getDailyMeetings($bdd);
+        $monthlyMeetings = $meetingRep->getMonthlyMeetings($bdd);
+
+        $dailyOrders = $orderRep->getDailyOrders($bdd);
+
+        $topCustomers = $customerRep->getTopMonthlyCustomer($bdd);
+
+        echo $twig->render('App/home.html', [
+            'dailyMeetings' => $dailyMeetings,
+            'monthlyMeetings' => $monthlyMeetings,
+            'dailyOrders' => $dailyOrders,
+            'topCustomers' => $topCustomers
+        ]);
     }
 
     function agendaAction($twig, $bdd) {
