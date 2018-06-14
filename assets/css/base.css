@@ -68,11 +68,13 @@ body {
         left: 17px;
         width: 212px;
         height: 14px;
-        background: #fed978; }
+        background: #f5c338; }
     body .right .wrapper {
       display: flex;
       flex-flow: row wrap;
-      margin: 10vh 3vw 0; }
+      position: relative;
+      z-index: -1;
+      margin: 5vh 3vw 0; }
       body .right .wrapper h2 {
         text-transform: uppercase;
         font-size: 15px; }
@@ -280,7 +282,7 @@ header {
     font-size: 13px;
     font-weight: 700; }
     .days li:hover {
-      background: #fed978;
+      background: #f5c338;
       color: #fff; }
     .days li.active {
       background: #ee608f;
@@ -355,14 +357,23 @@ header {
     .top-clients .card div.client-card {
       display: flex;
       justify-content: space-around;
-      align-items: center;
-      position: relative; }
+      align-items: center; }
+      .top-clients .card div.client-card div {
+        width: 20%;
+        text-align: center; }
       .top-clients .card div.client-card h3 {
         padding-bottom: 10px;
-        border-bottom: 1px solid #f2f2f2; }
-      .top-clients .card div.client-card img {
-        border-radius: 25px; }
-      .top-clients .card div.client-card .nbprod {
+        border-bottom: 1px solid #f2f2f2;
+        display: inline-block;
+        padding: 10px 0px;
+        width: 30%;
+        text-align: center;
+        text-transform: uppercase; }
+      .top-clients .card div.client-card .top-client-nb-product,
+      .top-clients .card div.client-card .top-client-reassort,
+      .top-clients .card div.client-card .top-client-name {
+        padding: 30px 0; }
+      .top-clients .card div.client-card .top-client-nb-product {
         font-size: 20px;
         margin: 20px;
         position: relative;
@@ -372,13 +383,13 @@ header {
         line-height: 100px;
         box-shadow: 0 4px 19px 0 #abf0ea;
         border: solid 6px #abf0ea; }
-        .top-clients .card div.client-card .nbprod p {
+        .top-clients .card div.client-card .top-client-nb-product p {
           position: absolute;
           top: -5%;
           left: 50%;
           transform: translate(-50%);
           font-size: 22px; }
-      .top-clients .card div.client-card .reassort {
+      .top-clients .card div.client-card .top-client-reassort {
         font-size: 20px;
         margin: 20px;
         position: relative;
@@ -388,7 +399,7 @@ header {
         line-height: 100px;
         box-shadow: 0 4px 19px 0 #fed978;
         border: solid 6px #fed978; }
-        .top-clients .card div.client-card .reassort p {
+        .top-clients .card div.client-card .top-client-reassort p {
           position: absolute;
           top: -5%;
           left: 50%;
@@ -400,7 +411,7 @@ section.clients tbody tr td.done {
   font-weight: 700;
   letter-spacing: 0.8px; }
 section.clients tbody tr td.doing {
-  color: #fed978;
+  color: #f5c338;
   font-weight: 700;
   letter-spacing: 0.8px; }
 section.clients tbody tr td.failed {
@@ -488,7 +499,7 @@ div.left nav {
         width: 30px;
         height: 30px;
         border-radius: 15px;
-        background: #fed978;
+        background: #f5c338;
         box-shadow: 0 2px 11px 0 rgba(254, 191, 211, 0.61); }
       .today-appointment ul li div.puce--next {
         color: transparent;
