@@ -1,0 +1,79 @@
+    div.customer-detail {
+    .welcome-customer-detail {
+        width: 100%;
+        height: 100px;
+        position: relative;
+        h1 {
+        position: absolute;
+        font-size: 30px;
+        font-weight: 700;
+        color: $black;
+        margin: 30px 15px;
+        z-index: 3000;
+        }
+        span.rectangle {
+        position: absolute;
+        top: 50px;
+        left: 17px;
+        width: 150px;
+        height: 14px;
+        background: $yellow;
+        }
+    }
+
+    .two-part {
+        width: 100%;
+
+        section.card {
+            padding: 15px;
+            display: flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items: center;
+        
+        .sales-number{
+            font: 40px "avenir";
+            font-weight: 900;
+            color: $blue;
+            letter-spacing: 1px;
+        }
+        img{
+            width: 100%;
+        }
+        h2 {
+            font: 20 "avenir";
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .product-sale {
+            background: red;
+            h2 {
+            font: 20 "avenir";
+            font-weight: 900;
+            letter-spacing: 1px;
+            }
+        }
+        }
+        div.product-sale {
+        height: 300px;
+        .product-sale-detail {
+            width: 225.5px;
+            height: 55px;
+            font-family: Avenir;
+            font-size: 40px;
+            font-weight: 900;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: center;
+            color: #646a77;
+        }
+        .evolution {
+            float: right;
+            font-size: 20px;
+        }
+        }
+    }
+    }

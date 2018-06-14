@@ -1,5 +1,95 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} {% block content %}
+<div class="customer-detail">
+    <div class="welcome-customer-detail">
+        <h1>Milan Lunetier</h1>
+        <span class="rectangle"></span>
+    </div>
+    <div class="two-part">
+      <section class="card">
+            <h2>Nombre de produits vendus</h2>
+            <p class="sales-number">82</p>
+      </section>
+      <section class="card">
+          <h2>Fréquence</h2>
+          <img src="assets/img/graph.png" alt="">
+      </section>
+</div>
+<div class="one-part">
+    <section class="clients">
+        <table class="table card">
+            <thead>
+                <tr>
+                    <th>Client</th>
+                    <th>Coli</th>
+                    <th>Date d'envoi</th>
+                    <th>État</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Milan Lunetier</td>
+                    <td>3190</td>
+                    <td>08/12/2018</td>
+                    <td class="done">Livré</td>
 
-{% block content %}
-    <h1>Détails client</h1>
+                </tr>
+                <tr>
+                    <td>Optic 2000</td>
+                    <td>3192</td>
+                    <td>09/12/2018</td>
+                    <td class="doing">En cours</td>
+                </tr>
+                <tr>
+                    <td>Optic 2000</td>
+                    <td>3190</td>
+                    <td>09/12/2018</td>
+                    <td class="failed">Échec</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </section>
+
+</div>
+
+<div class="one-part">
+    <section class="top-clients">
+        <div class="card">
+            <h2>Top clients du mois</h2>
+            <div class="client-card">
+                <div class="top-client-name">
+                    <span>Milan lunetier</span>
+                </div>
+
+
+                <h3>Produits achetés</h3>
+                <div class="top-client-nb-product">
+                    <p>122</p>
+                </div>
+                <h3>Réassorts</h3>
+                <div class="top-client-reassort">
+                    <p>4</p>
+                </div>
+            </div>
+
+            <div class="client-card">
+                <div class="top-client-name">
+                    <span>Optic 2000 Vosges</span>
+                </div>
+                <h3>Produits achetés</h3>
+                <div class="top-client-nb-product">
+                    <p>122</p>
+                </div>
+                <h3>Réassorts</h3>
+                <div class="top-client-reassort">
+                    <p>4</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+</div>
+
 {% endblock %}
