@@ -1,20 +1,92 @@
 {% extends "base.html" %}
 
 {% block style %}
-    <link rel="stylesheet" href="assets/css/Auth/register.css">
+
 {% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+    <!--<h1>Register</h1>-->
 
-    <a href="?action=login">Login</a><br><br>
+    <!--<a href="?action=login">Login</a><br><br>-->
 
-    {{ error ? error : '' }}
+    <!--{{ error ? error : '' }}-->
 
-    <form method="post" action="?action=register">
-        <input type="email" name="email" placeholder="email" required>
-        <input type="text" name="username" placeholder="username" required>
-        <input type="password" name="password" placeholder="password" required>
-        <input type="submit">
-    </form>
+    <!--<form method="post" action="?action=register">-->
+        <!--<input type="email" name="email" placeholder="email" required>-->
+        <!--<input type="text" name="username" placeholder="username" required>-->
+        <!--<input type="password" name="password" placeholder="password" required>-->
+        <!--<input type="submit">-->
+    <!--</form>-->
+
+    <div class="content-left">
+        <div class="logo">LOGO</div>
+    </div>
+
+    <div class="content-right">
+        <div class="subscribe">
+            <a href="?action=login">
+                <button class="btn">Se connecter</button>
+            </a>
+        </div>
+        {{ error ? error : '' }}
+        <form method="post" action="?action=register">
+            <div class="input-group">
+                <h2>Créer un compte</h2>
+                <div class="input-form">
+                    <input type="email" name="email" id="email" autocomplete="off">
+                    <label for="email">Email</label>
+                    <span class="border-effect"></span>
+                </div>
+                <div class="input-form">
+                    <input type="text" name="username" id="username" autocomplete="off">
+                    <label for="username">Identifiant</label>
+                    <span class="border-effect"></span>
+                </div>
+                <div class="input-form">
+                    <input type="password" name="password" id="password" autocomplete="off">
+                    <label for="password">Mot de passe</label>
+                    <span class="border-effect"></span>
+                </div>
+                <input type="submit" class="btn btn--register" value="Créer un compte">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        var inputEffect = function() {
+            var inputs = document.querySelectorAll(".input-form input");
+            var inputgroups = document.querySelectorAll(".input-form");
+
+            if (inputs !== null) {
+                for (let i = 0; i < inputs.length; i++) {
+                    var input = inputs[i];
+
+                    if (input.value.length !== 0) {
+                        inputgroups[i].classList.add("in");
+                    }
+
+                    inputs[i].addEventListener("input", function () {
+                        if ( inputs[i].value.length === 0 ) {
+                            inputgroups[i].classList.remove("in");
+                        } else {
+                            inputgroups[i].classList.add("in");
+                        }
+                    });
+                    inputs[i].addEventListener("blur", function () {
+                        if ( inputs[i].value.length === 0 ) {
+                            inputgroups[i].classList.remove("in");
+                        }
+                    });
+                    inputs[i].addEventListener("click", function () {
+                        inputgroups[i].classList.add("in");
+                    });
+                }
+            }
+        };
+
+        window.onload = function () {
+            inputEffect();
+        };
+    </script>
+
 {% endblock %}
