@@ -1,0 +1,1298 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: "avenir";
+  src: url("../font/AvenirLTStd-Book.otf") format("otf");
+}
+@font-face {
+  font-family: "avenir-light";
+  src: url("../font/AvenirLTStd-Light.otf") format("otf");
+}
+@font-face {
+  font-family: "avenir-roman";
+  src: url("../font/AvenirLTStd-Roman.otf") format("otf");
+}
+body {
+  font-family: Avenir, sans-serif;
+  background: #f2f2f2;
+  color: #646a77;
+  display: flex;
+}
+body .left {
+  width: 15%;
+}
+body .right {
+  width: 85%;
+}
+body .right .welcome {
+  width: 100%;
+  height: 100px;
+  position: relative;
+}
+body .right .welcome h1 {
+  position: absolute;
+  font-size: 30px;
+  font-weight: 700;
+  color: #646a77;
+  margin: 30px 15px;
+  z-index: 3000;
+}
+body .right .welcome span.rectangle {
+  position: absolute;
+  top: 50px;
+  left: 17px;
+  width: 212px;
+  height: 14px;
+  background: #f5c338;
+}
+body .right .wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+  z-index: 1;
+  margin: 10vh 3vw 0;
+}
+body .right .wrapper h2 {
+  font: 18px "avenir";
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 1vh 3%;
+}
+body a {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+body ul {
+  list-style-type: none;
+}
+
+.input-form {
+  position: relative;
+  width: calc(70%);
+}
+.input-form input {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #b3b3b3;
+  width: 100%;
+  height: 5vh;
+  outline: none;
+  font: 20px "avenir";
+  letter-spacing: 1px;
+  color: #646a77;
+  position: relative;
+  z-index: 2;
+}
+.input-form input:focus ~ label {
+  top: -3.5vh;
+  font-size: 16px;
+  color: #2e81e2;
+}
+.input-form input:focus ~ .border-effect {
+  width: 100%;
+}
+.input-form label {
+  font: 20px "avenir";
+  letter-spacing: 1px;
+  color: #b3b3b3;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+.input-form .border-effect {
+  width: 0;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background: #2e81e2;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+.input-form.in label {
+  top: -3.5vh;
+  font-size: 16px;
+  color: #2e81e2;
+}
+.input-form.in .border-effect {
+  width: 100%;
+}
+
+.btn {
+  width: 200px;
+  text-align: center;
+  background: #2e81e2;
+  border: 1px solid #2e81e2;
+  color: #fff;
+  padding: 10px 0;
+  outline: none;
+  font: 16px "avenir";
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+.btn:hover {
+  background: #f2f2f2;
+  color: #2e81e2;
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  background: #fff;
+  position: fixed;
+  left: 15%;
+  z-index: 2;
+  width: 100%;
+  height: 55px;
+  box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.1);
+}
+header .user-info {
+  position: fixed;
+  right: 1vw;
+}
+header .user-info svg {
+  margin-top: 10px;
+}
+header .user-info svg:hover {
+  background: #ee608f;
+  cursor: pointer;
+}
+header .input-form {
+  display: flex;
+  margin-left: 50px;
+}
+header .input-form input {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none;
+  background: transparent;
+  width: 100%;
+  height: 55px;
+  outline: none;
+  font: 20px "avenir";
+  letter-spacing: 1px;
+  color: #646a77;
+  position: relative;
+  z-index: 2;
+}
+header .input-form input:focus ~ label {
+  top: 14px;
+  opacity: 0;
+  font-size: inherit;
+}
+header .input-form input:focus ~ .border-effect {
+  width: 100%;
+}
+header .input-form label {
+  font: 20px "avenir";
+  letter-spacing: 1px;
+  color: #b3b3b3;
+  position: absolute;
+  top: 14px;
+  z-index: 1;
+  height: 55px;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+header .input-form label > svg {
+  margin: -3px 0;
+}
+header .input-form .border-effect {
+  width: 0;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background: #2e81e2;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+header .input-form.in label {
+  opacity: 0;
+  top: 14px;
+  font-size: inherit;
+}
+
+.clients,
+.visit-report,
+.order-report {
+  margin-top: 15px;
+}
+.clients .table,
+.clients .visit-report-table,
+.clients .order-report-table,
+.visit-report .table,
+.visit-report .visit-report-table,
+.visit-report .order-report-table,
+.order-report .table,
+.order-report .visit-report-table,
+.order-report .order-report-table {
+  border-radius: 10px;
+  background: #fff;
+  width: 100%;
+}
+.clients .table thead th,
+.clients .visit-report-table thead th,
+.clients .order-report-table thead th,
+.visit-report .table thead th,
+.visit-report .visit-report-table thead th,
+.visit-report .order-report-table thead th,
+.order-report .table thead th,
+.order-report .visit-report-table thead th,
+.order-report .order-report-table thead th {
+  background: #fff;
+  padding: 20px 15px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 15px;
+  color: #646a77;
+  border-bottom: 1px solid #f2f2f2;
+  text-transform: uppercase;
+}
+.clients .table thead th:first-of-type,
+.clients .visit-report-table thead th:first-of-type,
+.clients .order-report-table thead th:first-of-type,
+.visit-report .table thead th:first-of-type,
+.visit-report .visit-report-table thead th:first-of-type,
+.visit-report .order-report-table thead th:first-of-type,
+.order-report .table thead th:first-of-type,
+.order-report .visit-report-table thead th:first-of-type,
+.order-report .order-report-table thead th:first-of-type {
+  border-radius: 5px 0 0 0;
+}
+.clients .table thead th:last-of-type,
+.clients .visit-report-table thead th:last-of-type,
+.clients .order-report-table thead th:last-of-type,
+.visit-report .table thead th:last-of-type,
+.visit-report .visit-report-table thead th:last-of-type,
+.visit-report .order-report-table thead th:last-of-type,
+.order-report .table thead th:last-of-type,
+.order-report .visit-report-table thead th:last-of-type,
+.order-report .order-report-table thead th:last-of-type {
+  border-radius: 0 5px 0 0;
+}
+.clients .table td,
+.clients .visit-report-table td,
+.clients .order-report-table td,
+.visit-report .table td,
+.visit-report .visit-report-table td,
+.visit-report .order-report-table td,
+.order-report .table td,
+.order-report .visit-report-table td,
+.order-report .order-report-table td {
+  padding: 15px;
+  text-align: left;
+  vertical-align: middle;
+  font-weight: 300;
+  font-size: 15px;
+  color: #646a77;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+}
+.clients .visit-report-table th:last-child,
+.visit-report .visit-report-table th:last-child,
+.order-report .visit-report-table th:last-child {
+  width: 60%;
+}
+.clients .visit-report-table td,
+.visit-report .visit-report-table td,
+.order-report .visit-report-table td {
+  padding: 20px 15px 30px 15px;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.left nav {
+  background: #2e81e2;
+  position: fixed;
+  width: 15%;
+  z-index: 2;
+}
+.left nav img {
+  width: 60%;
+  margin-left: 20%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+.left nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  height: 100vh;
+}
+.left nav ul li {
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+.left nav ul li a {
+  display: block;
+  padding: 20px;
+  color: #fff;
+}
+.left nav ul li a svg {
+  padding: 0 10px 0 0;
+  margin: -3px 0;
+}
+.left nav ul li:hover {
+  background: #4293f0;
+}
+.left nav ul li.nav-active {
+  background: #2b78d0;
+}
+
+/* Month header */
+.month {
+  padding: 22px;
+  width: 100%;
+  text-align: center;
+  color: #646a77;
+}
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+.month ul li {
+  color: #646a77;
+  font: 18px "avenir";
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.month .prev {
+  float: left;
+}
+.month .next {
+  float: right;
+}
+
+.weekdays {
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-around;
+}
+.weekdays li {
+  color: #646a77;
+  text-align: center;
+}
+
+.days {
+  padding: 15px 50px;
+}
+.days li {
+  position: relative;
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  border-radius: 25px;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 5px;
+  padding-top: 17px;
+  font-size: 13px;
+  font-weight: 700;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+.days li:hover {
+  background: #f5c338;
+  color: #fff;
+}
+.days li.active {
+  background: #ee608f;
+  box-shadow: 0 6px 11px 0 rgba(254, 120, 243, 0.24);
+  color: #fff;
+}
+.days li span.appointment {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  bottom: 0;
+  left: 18px;
+  border-radius: 5px;
+  background: #ee608f;
+  box-shadow: 0 6px 11px 0 rgba(254, 120, 243, 0.24);
+}
+
+.content-left {
+  width: 50%;
+  height: 100vh;
+  background: #2e81e2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-left .logo {
+  background: #fff;
+  width: 180px;
+  height: 180px;
+  font: 30px "avenir";
+  font-weight: bold;
+  text-align: center;
+}
+
+.content-right {
+  width: 50%;
+  height: 100vh;
+}
+.content-right .subscribe {
+  display: flex;
+  justify-content: flex-end;
+  margin: 5vh 5vw 0 0;
+}
+.content-right .input-group {
+  padding: 15vh 5vw;
+}
+.content-right .input-group h2 {
+  font: 30px "avenir";
+  font-weight: bold;
+  letter-spacing: 4.02px;
+}
+.content-right .input-group .input-form {
+  margin: 6vh 0 0;
+}
+.content-right .input-group .input-form:first-of-type {
+  margin: 8vh 0 0;
+}
+.content-right .input-group a {
+  display: block;
+  font: 18px "avenir";
+  font-weight: bold;
+  letter-spacing: 1.47px;
+  margin: 4vh 0;
+  text-decoration: none;
+  color: #646a77;
+}
+.content-right .input-group .btn--register {
+  margin: 4vh 0 0;
+}
+
+.two-part {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.two-part section {
+  display: flex;
+  width: 48.5%;
+}
+
+.one-part {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.1);
+}
+.card span {
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.today-appointment {
+  width: 100%;
+  margin: 15px;
+  overflow: scroll;
+  max-height: 300px;
+}
+.today-appointment h2 {
+  font: 34px "avenir";
+  font-weight: 700;
+  color: #646a77;
+}
+.today-appointment h3 {
+  margin: 40px 35px;
+  font: 15px "avenir";
+}
+.today-appointment h3 span.today--rdv {
+  font-weight: 700;
+  color: #2e81e2;
+}
+.today-appointment ul {
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.today-appointment ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  width: 90%;
+}
+.today-appointment ul li .heure-rdv {
+  width: 10%;
+  margin-right: 1%;
+}
+.today-appointment ul li .client-rdv {
+  width: 30%;
+  font-weight: 500;
+  margin-right: 10px;
+}
+.today-appointment ul li .lieu-rdv {
+  width: 36%;
+}
+.today-appointment ul li .itineraire {
+  background: #fff;
+  color: #2e81e2;
+  border: 1px solid #2e81e2;
+  border-radius: 20px;
+  text-align: center;
+  margin-left: 14px;
+  padding: 5px 15px;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+.today-appointment ul li .itineraire:hover {
+  background: #2e81e2;
+  color: #fff;
+}
+.today-appointment ul li div.puce {
+  color: transparent;
+  margin-right: 3%;
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  background: #f5c338;
+  box-shadow: 0 2px 11px 0 rgba(254, 191, 211, 0.61);
+}
+.today-appointment ul li div.puce--next {
+  color: transparent;
+  margin-right: 3%;
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+}
+
+div.customer-detail {
+  width: 94%;
+}
+div.customer-detail .welcome-customer-detail {
+  width: 100%;
+  height: 100px;
+  position: relative;
+}
+div.customer-detail .welcome-customer-detail h1 {
+  position: absolute;
+  font-size: 30px;
+  font-weight: 700;
+  color: #646a77;
+  margin: 30px 15px;
+  z-index: 3000;
+}
+div.customer-detail .welcome-customer-detail span.rectangle {
+  position: absolute;
+  top: 50px;
+  left: 17px;
+  width: 250px;
+  height: 14px;
+  background: #f5c338;
+}
+div.customer-detail .one-part .visit-report h2,
+div.customer-detail .one-part .order-report h2 {
+  padding: 15px;
+  font: 20px "avenir";
+}
+div.customer-detail .two-part {
+  width: 100%;
+}
+div.customer-detail .two-part section.card {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+div.customer-detail .two-part section.card .sales-number {
+  font: 40px "avenir";
+  font-weight: 900;
+  color: #a9f0ea;
+  letter-spacing: 1px;
+}
+div.customer-detail .two-part section.card img {
+  width: 100%;
+}
+div.customer-detail .two-part section.card h2 {
+  font: 20 "avenir";
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+div.customer-detail .two-part section.card .product-sale {
+  background: red;
+}
+div.customer-detail .two-part section.card .product-sale h2 {
+  font: 20 "avenir";
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+div.customer-detail .two-part div.product-sale {
+  height: 300px;
+}
+div.customer-detail .two-part div.product-sale .product-sale-detail {
+  width: 225.5px;
+  height: 55px;
+  font-family: Avenir;
+  font-size: 40px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #646a77;
+}
+div.customer-detail .two-part div.product-sale .evolution {
+  float: right;
+  font-size: 20px;
+}
+
+.top-clients {
+  margin-top: 15px;
+}
+.top-clients .card {
+  padding: 15px;
+}
+.top-clients .card div.client-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.top-clients .card div.client-card div {
+  width: 20%;
+  text-align: center;
+}
+.top-clients .card div.client-card h3 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f2f2f2;
+  display: inline-block;
+  padding: 10px 0px;
+  width: 30%;
+  text-align: center;
+  text-transform: uppercase;
+}
+.top-clients .card div.client-card .top-client-nb-product,
+.top-clients .card div.client-card .top-client-reassort,
+.top-clients .card div.client-card .top-client-name {
+  padding: 30px 0;
+}
+.top-clients .card div.client-card .top-client-nb-product {
+  font-size: 20px;
+  margin: 20px;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  line-height: 100px;
+  box-shadow: 0 4px 19px 0 #abf0ea;
+  border: solid 6px #abf0ea;
+}
+.top-clients .card div.client-card .top-client-nb-product p {
+  position: absolute;
+  top: -5%;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 22px;
+}
+.top-clients .card div.client-card .top-client-reassort {
+  font-size: 20px;
+  margin: 20px;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  line-height: 100px;
+  box-shadow: 0 4px 19px 0 #fed978;
+  border: solid 6px #fed978;
+}
+.top-clients .card div.client-card .top-client-reassort p {
+  position: absolute;
+  top: -5%;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 22px;
+}
+
+section.clients tbody tr td.done,
+section.order-report tbody tr td.done {
+  color: #2e81e2;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+section.clients tbody tr td.doing,
+section.order-report tbody tr td.doing {
+  color: #f5c338;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+section.clients tbody tr td.failed,
+section.order-report tbody tr td.failed {
+  color: #ee608f;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+section.clients tbody tr td.inprogress,
+section.order-report tbody tr td.inprogress {
+  color: #909090;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+section.agenda .welcome-agenda {
+  width: 100%;
+  height: 100px;
+  position: relative;
+}
+section.agenda .welcome-agenda h1 {
+  position: absolute;
+  font-size: 30px;
+  font-weight: 700;
+  color: #646a77;
+  margin: 30px 15px;
+  z-index: 3000;
+}
+section.agenda .welcome-agenda span.rectangle {
+  position: absolute;
+  top: 50px;
+  left: 17px;
+  width: 150px;
+  height: 14px;
+  background: #f5c338;
+}
+section.agenda div#calendar {
+  width: 98%;
+}
+section.agenda div#calendar .fc-header-toolbar {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+section.agenda div#calendar .fc-header-toolbar .fc-left {
+  order: 1;
+}
+section.agenda div#calendar .fc-header-toolbar .fc-right {
+  order: 3;
+}
+section.agenda div#calendar .fc-header-toolbar .fc-right .fc-month-button {
+  width: 100px;
+  height: 35px;
+  border-radius: 16px 0 0 16px;
+  border: none;
+  color: #fff;
+  letter-spacing: 1px;
+  background-color: #2e81e2;
+  cursor: pointer;
+}
+section.agenda div#calendar .fc-header-toolbar .fc-right .fc-listYear-button {
+  width: 100px;
+  height: 35px;
+  border-radius: 0 16px 16px 0;
+  background: #fff;
+  border: none;
+}
+section.agenda div#calendar .fc-header-toolbar .fc-center {
+  order: 2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+section.agenda div#calendar .fc-header-toolbar .fc-center .fc-button {
+  outline: none;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+section.agenda div#calendar table .fc-head {
+  background: #2e81e2;
+  height: 100px;
+}
+section.agenda div#calendar table .fc-head .fc-widget-header .fc-day-header {
+  color: #fff;
+  padding: 10px;
+}
+section.agenda div#calendar table .fc-body td .fc-event-container .fc-event {
+  color: #fff;
+  background: #ee608f;
+  margin-bottom: 5px;
+  height: 30px;
+  border: none;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+section.clients tbody tr td.done,
+section.order-report tbody tr td.done {
+  color: #2e81e2;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+section.clients tbody tr td.doing,
+section.order-report tbody tr td.doing {
+  color: #f5c338;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+section.clients tbody tr td.failed,
+section.order-report tbody tr td.failed {
+  color: #ee608f;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+section.clients tbody tr td.inprogress,
+section.order-report tbody tr td.inprogress {
+  color: #909090;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.customers-prospects {
+  width: 100%;
+}
+.customers-prospects .btns-opt {
+  display: flex;
+  justify-content: flex-end;
+  margin: 3vh 4vw 0;
+}
+.customers-prospects .btns-opt button {
+  margin: 0 1vw;
+}
+.customers-prospects .btns-opt button:first-of-type {
+  background: #fff;
+  color: #646a77;
+  border: none;
+  width: 130px;
+  -webkit-box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.5);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.customers-prospects .btns-opt button:last-of-type {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.5);
+}
+.customers-prospects .btns-opt button:last-of-type:hover {
+  background: #2b78d0;
+  color: #fff;
+}
+.customers-prospects .consult-table .tab {
+  display: flex;
+  justify-content: flex-start;
+  margin: 3vh 3vw 0;
+}
+.customers-prospects .consult-table__list {
+  display: flex;
+}
+.customers-prospects .consult-table__list .table {
+  width: 75vw;
+  margin: 3vh 1vw 0 3vw;
+  background: transparent;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.customers-prospects .consult-table__list .table thead {
+  background: #f2f2f2;
+  color: #909090;
+  font: 18px "avenir";
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: left;
+  text-transform: uppercase;
+}
+.customers-prospects .consult-table__list .table thead tr {
+  height: 3vh;
+}
+.customers-prospects .consult-table__list .table thead tr th {
+  padding: 0 0 1vh;
+}
+.customers-prospects .consult-table__list .table thead tr th:first-of-type {
+  padding: 1.5vh 0 1.5vh 2vw;
+}
+.customers-prospects .consult-table__list .table tbody tr {
+  box-shadow: 0 8px 10px 0 rgba(222, 222, 222, 0.5);
+  background: #fff;
+}
+.customers-prospects .consult-table__list .table tbody tr td {
+  border-bottom: 1.5vh solid #f2f2f2;
+  padding: 1.5vh 0;
+  font: 18px "avenir";
+  font-weight: 500;
+}
+.customers-prospects .consult-table__list .table tbody tr td:first-of-type {
+  padding: 1.5vh 0 1.5vh 2vw;
+  -webkit-border-radius: 10px 10px 0 0;
+  -moz-border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 0 0;
+}
+.customers-prospects .consult-table__list .table tbody tr td:first-of-type {
+  padding: 1.5vh 0 1.5vh 2vw;
+  -webkit-border-radius: 10px 10px 0 0;
+  -moz-border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 0 0;
+}
+.customers-prospects .consult-table__list .filter-letter {
+  background: #fff;
+  width: 2vw;
+  margin: 8.7vh 0 0;
+  padding: 1vh 0;
+}
+.customers-prospects .consult-table__list .filter-letter ul {
+  display: flex;
+  flex-direction: column;
+}
+.customers-prospects .consult-table__list .filter-letter ul li {
+  padding: 0.1vh 0;
+  text-align: center;
+  font: 15px "avenir";
+  font-weight: 700;
+}
+
+.list-command {
+  width: 100%;
+  background: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.1);
+  margin: 3vh 3vw;
+  padding: 1vh 1vw;
+}
+.list-command h2 {
+  font: 20px "avenir";
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #646a77;
+  margin: 2vh 2vw 3vh;
+}
+.list-command .table-command {
+  margin: 1vh 2vw;
+}
+.list-command .table-command table {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  width: 100%;
+}
+.list-command .table-command table thead tr {
+  border-bottom: 1px solid #f2f2f2;
+}
+.list-command .table-command table thead tr th {
+  font: 16px "avenir";
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  text-align: left;
+  color: #909090;
+  padding: 10px 0;
+}
+.list-command .table-command table tbody tr:first-of-type td {
+  border-top: 1px solid #f2f2f2;
+  padding: 30px 0 15px;
+}
+.list-command .table-command table tbody tr td {
+  padding: 15px 0;
+  font: 16px "avenir";
+  font-weight: 500;
+}
+.list-command .table-command table tbody tr.send td:last-of-type {
+  color: #2e81e2;
+}
+.list-command .table-command table tbody tr.progress td:last-of-type {
+  color: #f5c338;
+}
+.list-command .table-command table tbody tr.processing td:last-of-type {
+  color: #909090;
+}
+.list-command .table-command table tbody tr.error td:last-of-type {
+  color: #ee608f;
+}
+
+.list-products {
+  background: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  margin: 3vh 3vw;
+  padding: 1vh 1vw;
+}
+.list-products .card-product {
+  background: #f2f2f2;
+  width: 17.3%;
+  height: 19vh;
+  margin: 1vh 1vw;
+  position: relative;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+.list-products .card-product__header {
+  background: #909090;
+  text-align: center;
+}
+.list-products .card-product__header p {
+  font: 15px "avenir";
+  letter-spacing: 1px;
+}
+.list-products .card-product__add {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 3%;
+  font: 20px "avenir";
+  line-height: 0.6;
+  color: #fff;
+  background: #f5c338;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: gainsboro;
+  background-color: rgba(220, 220, 220, 0.6);
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+}
+.modal .modal-content {
+  position: fixed;
+  top: 20%;
+  left: 25%;
+  background-color: #fff;
+  width: 50%;
+  height: 60%;
+  padding: 2% 7% 2% 3%;
+}
+.modal .modal-content .modal-header h2 {
+  font: 20px "avenir";
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 15px 0;
+  color: #646a77;
+  border-bottom: 1px solid #f2f2f2;
+}
+.modal .modal-content .modal-header .close {
+  position: absolute;
+  color: #646a77;
+  font: 60px "avenir";
+  line-height: 0.7;
+  top: 20px;
+  right: 20px;
+}
+.modal .modal-content .modal-header .close:hover,
+.modal .modal-content .modal-header .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal .modal-content .modal-body {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 3vh 0;
+}
+.modal .modal-content .modal-body-left, .modal .modal-content .modal-body-right {
+  width: 50%;
+}
+.modal .modal-content .modal-body-left .input-form, .modal .modal-content .modal-body-right .input-form {
+  width: calc(90%);
+  margin: 3.5vh 0;
+}
+.modal .modal-content .modal-body-left .input-form input, .modal .modal-content .modal-body-right .input-form input {
+  font-size: 16px;
+}
+.modal .modal-content .modal-body-left .input-form input:focus ~ label, .modal .modal-content .modal-body-right .input-form input:focus ~ label {
+  top: -2vh;
+  font-size: 14px;
+}
+.modal .modal-content .modal-body-left .input-form input:hover ~ label, .modal .modal-content .modal-body-right .input-form input:hover ~ label {
+  top: -2vh;
+  font-size: 14px;
+}
+.modal .modal-content .modal-body-left .input-form label, .modal .modal-content .modal-body-right .input-form label {
+  top: 10px;
+  font-size: 16px;
+}
+.modal .modal-content .modal-body-left .input-form.in label, .modal .modal-content .modal-body-right .input-form.in label {
+  font-size: 14px;
+  top: -2vh;
+}
+.modal .modal-content .modal-body .submit-customers {
+  width: 95%;
+  display: flex;
+  justify-content: flex-end;
+}
+.modal .modal-content .modal-body .submit-customers .btn {
+  margin: 2vh 0 0;
+}
+
+.modal-open > *:not(.modal) {
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: blur(1px);
+}
+
+.modal-open .modal {
+  display: block;
+}
+
+@-webkit-keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+@keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=css/base.css.map */

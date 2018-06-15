@@ -1,9 +1,213 @@
 {% extends "layout.html" %}
 
 {% block css %}
-    <link rel="stylesheet" href="assets/css/App/customerList.css">
+
 {% endblock %}
 
 {% block content %}
-    <h1>Liste des clients</h1>
+    <div class="customers-prospects">
+
+        <div class="btns-opt">
+            <button class="btn">Filtrer</button>
+            <button class="btn btn-modal" id="myBtn">+ Ajouter client</button>
+        </div>
+
+        <div class="consult-table">
+            <div class="tab">
+                <a href="" class="link link-active">Liste clients</a>
+                <a href="" class="link">Liste prospects</a>
+            </div>
+            <div class="consult-table__list">
+                <table class="table card">
+                    <thead>
+                    <tr>
+                        <th>Nom client</th>
+                        <th>Location</th>
+                        <th>N° de téléphone</th>
+                        <th>Email</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>AAB OPTIQUE</td>
+                        <td>Paris (75)</td>
+                        <td>01 65 45 66 32</td>
+                        <td>aab-optique@gmail.com</td>
+                        <td>•••</td>
+                    </tr>
+                    <tr>
+                        <td>AAB OPTIQUE</td>
+                        <td>Paris (75)</td>
+                        <td>01 65 45 66 32</td>
+                        <td>aab-optique@gmail.com</td>
+                        <td>•••</td>
+                    </tr>
+                    <tr>
+                        <td>AAB OPTIQUE</td>
+                        <td>Paris (75)</td>
+                        <td>01 65 45 66 32</td>
+                        <td>aab-optique@gmail.com</td>
+                        <td>•••</td>
+                    </tr>
+                    <tr>
+                        <td>AAB OPTIQUE</td>
+                        <td>Paris (75)</td>
+                        <td>01 65 45 66 32</td>
+                        <td>aab-optique@gmail.com</td>
+                        <td>•••</td>
+                    </tr>
+                    <tr>
+                        <td>AAB OPTIQUE</td>
+                        <td>Paris (75)</td>
+                        <td>01 65 45 66 32</td>
+                        <td>aab-optique@gmail.com</td>
+                        <td>•••</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="filter-letter">
+                    <ul>
+                        <li>
+                            <a href="">A</a>
+                        </li>
+                        <li>
+                            <a href="">B</a>
+                        </li>
+                        <li>
+                            <a href="">C</a>
+                        </li>
+                        <li>
+                            <a href="">D</a>
+                        </li>
+                        <li>
+                            <a href="">E</a>
+                        </li>
+                        <li>
+                            <a href="">F</a>
+                        </li>
+                        <li>
+                            <a href="">G</a>
+                        </li>
+                        <li>
+                            <a href="">H</a>
+                        </li>
+                        <li>
+                            <a href="">I</a>
+                        </li>
+                        <li>
+                            <a href="">J</a>
+                        </li>
+                        <li>
+                            <a href="">K</a>
+                        </li>
+                        <li>
+                            <a href="">L</a>
+                        </li>
+                        <li>
+                            <a href="">M</a>
+                        </li>
+                        <li>
+                            <a href="">N</a>
+                        </li>
+                        <li>
+                            <a href="">O</a>
+                        </li>
+                        <li>
+                            <a href="">P</a>
+                        </li>
+                        <li>
+                            <a href="">Q</a>
+                        </li>
+                        <li>
+                            <a href="">R</a>
+                        </li>
+                        <li>
+                            <a href="">S</a>
+                        </li>
+                        <li>
+                            <a href="">T</a>
+                        </li>
+                        <li>
+                            <a href="">U</a>
+                        </li>
+                        <li>
+                            <a href="">V</a>
+                        </li>
+                        <li>
+                            <a href="">W</a>
+                        </li>
+                        <li>
+                            <a href="">X</a>
+                        </li>
+                        <li>
+                            <a href="">Y</a>
+                        </li>
+                        <li>
+                            <a href="">Z</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Ajout d'un client</h2>
+        </div>
+        <div class="modal-body">
+            <div class="modal-body-left">
+                <div class="search input-form">
+                    <input type="text" name="name" id="name" tabindex="1" value="" autocomplete="off">
+                    <label for="name">Nom de l'enseigne</label>
+                    <span class="border-effect"></span>
+                </div>
+                <div class="search input-form">
+                    <input type="text" name="social" id="social" tabindex="1" value="" autocomplete="off">
+                    <label for="social">Raison sociale</label>
+                    <span class="border-effect"></span>
+                </div>
+                <div class="search input-form">
+                    <input type="text" name="location" id="location" tabindex="1" value="" autocomplete="off">
+                    <label for="location">Adresse de l'enseigne</label>
+                    <span class="border-effect"></span>
+                </div>
+                <div class="search input-form">
+                    <input type="text" name="numberPhone" id="numberPhone" tabindex="1" value="" autocomplete="off">
+                    <label for="numberPhone">N° de téléphone</label>
+                    <span class="border-effect"></span>
+                </div>
+            </div>
+            <div class="modal-body-right">
+                <div class="search input-form">
+                    <input type="text" name="managerName" id="managerName" tabindex="1" value="" autocomplete="off">
+                    <label for="managerName">Nom du gérant</label>
+                    <span class="border-effect"></span>
+                </div>
+                <div class="search input-form">
+                    <input type="text" name="commercialNumber" id="commercialNumber" tabindex="1" value="" autocomplete="off">
+                    <label for="commercialNumber">Numéro commercial</label>
+                    <span class="border-effect"></span>
+                </div>
+                <div class="search input-form">
+                    <input type="text" name="paymentAddress" id="paymentAddress" tabindex="1" value="" autocomplete="off">
+                    <label for="paymentAddress">Adresse de facturation</label>
+                    <span class="border-effect"></span>
+                </div>
+                <div class="search input-form">
+                    <input type="email" name="email" id="email" tabindex="1" value="" autocomplete="off">
+                    <label for="email">Email</label>
+                    <span class="border-effect"></span>
+                </div>
+            </div>
+            <div class="submit-customers">
+                <input type="submit" class="btn">
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

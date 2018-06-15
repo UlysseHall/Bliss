@@ -5,5 +5,45 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Commandes</h1>
+    <div class="list-command">
+        <h2>Suivi de commande</h2>
+        <div class="table-command">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Client</th>
+                    <th>Coli</th>
+                    <th>Date de l'envoi</th>
+                    <th>État</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="send">
+                    <td>OPTIQUE 2000</td>
+                    <td>345069000</td>
+                    <td>08/06/2018</td>
+                    <td>Envoyé</td>
+                </tr>
+                <tr class="progress">
+                    <td>OPTICIEN BD RICHARD WALLACE</td>
+                    <td>345069000</td>
+                    <td>08/06/2018</td>
+                    <td>En cours</td>
+                </tr>
+                <tr class="processing">
+                    <td>OPTIQUE 2000</td>
+                    <td>345069000</td>
+                    <td>08/06/2018</td>
+                    <td>En traitement</td>
+                </tr>
+                <tr class="error">
+                    <td>OPTIQUE 2000</td>
+                    <td>345069000</td>
+                    <td>08/06/2018</td>
+                    <td>Problème survenue</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+</div>
 {% endblock %}

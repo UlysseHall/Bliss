@@ -1,0 +1,46 @@
+.list-products {
+    background: $white;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3vh 3vw;
+    padding: 1vh 1vw;
+    .card-product {
+        background: $grey;
+        width: 17.3%;
+        height: 19vh;
+        margin: 1vh 1vw;
+        position: relative;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        overflow: hidden;
+        -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+        &__header {
+            background: $grey-darker;
+            text-align: center;
+            p {
+                font: 15px "avenir";
+                letter-spacing: 1px;
+            }
+        }
+        &__content {
+
+        }
+        &__add {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding: 3%;
+            font: 20px "avenir";
+            line-height: 0.6;
+            color: $white ;
+            background: $yellow;
+        }
+    }
+}

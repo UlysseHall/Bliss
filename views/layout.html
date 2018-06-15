@@ -229,6 +229,25 @@
             }
         }
     };
+    var modalAddCustomer = function () {
+        var modal = document.querySelector('.modal');
+        var btn = document.querySelector(".btn-modal");
+        var span = document.querySelector(".close");
+
+        btn.addEventListener("click", function () {
+            document.body.classList.add("modal-open");
+        });
+        span.addEventListener("click", function () {
+            document.body.classList.remove("modal-open");
+            document.body.classList.add("modal-close");
+        });
+        window.addEventListener("click", function (event) {
+            if (event.target == modal) {
+                document.body.classList.remove("modal-open");
+                document.body.classList.add("modal-close");
+            }
+        });
+    };
     var App = function () {
         return {
             init: function () {
