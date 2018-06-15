@@ -1,0 +1,78 @@
+/* Month header */
+.month {
+    padding: 22px;
+    width: 100%;
+    text-align: center;
+    color: $black;
+    ul {
+        margin: 0;
+        padding: 0;
+        li {
+            color: $black;
+            font: 18px "avenir";
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+    }
+    .prev {
+        float: left;
+    }
+    .next {
+        float: right;
+    }
+}
+
+.weekdays {
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-around;
+    li {
+        color: $black;
+        text-align: center;
+    }
+}
+
+.days {
+    padding: 15px 50px;
+    li {
+        position: relative;
+        cursor: pointer;
+        width: 45px;
+        height: 45px;
+        border-radius: 25px;
+        display: inline-block;
+        text-align: center;
+        margin-bottom: 5px;
+        padding-top: 17px;
+        font-size: 13px;
+        font-weight: 700;
+        -webkit-transition: 0.2s;
+        -moz-transition: 0.2s;
+        -ms-transition: 0.2s;
+        -o-transition: 0.2s;
+        transition: 0.2s;
+        &:hover{
+            background: $yellow;
+            color: $white;
+        }
+        &.active {
+            background: $pink;
+            box-shadow: 0 6px 11px 0 rgba(254, 120, 243, 0.24);
+            color: $white;
+
+        }
+        span.appointment{
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            bottom: 0;
+            left: 18px;
+            border-radius: 5px;
+            background: $pink;
+            box-shadow: 0 6px 11px 0 rgba(254, 120, 243, 0.24);
+        }
+    }
+
+}
+  

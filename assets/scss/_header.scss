@@ -1,0 +1,88 @@
+header {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    background: #fff;
+    position: fixed;
+    left: 15%;
+    z-index: 2;
+    width: 100%;
+    height: 55px;
+    box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.1);
+    .user-info {
+        position: fixed;
+        right: 1vw;
+        svg{
+            margin-top: 10px;
+            &:hover{
+                background: $pink;
+                cursor: pointer;
+            }
+        }
+    }
+    .input-form {
+        display: flex;
+        margin-left: 50px;
+        input {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            border: none;
+            background: transparent;
+            width: 100%;
+            height: 55px;
+            outline: none;
+            font: 20px "avenir";
+            letter-spacing: 1px;
+            color: $black;
+            position: relative;
+            z-index: 2;
+            &:focus ~ label {
+                top: 14px;
+                opacity: 0;
+                font-size: inherit;
+            }
+            &:focus ~ .border-effect {
+                width: 100%;
+            }
+        }
+        label {
+            font: 20px "avenir";
+            letter-spacing: 1px;
+            color: #b3b3b3;
+            position: absolute;
+            top: 14px;
+            z-index: 1;
+            height: 55px;
+            -webkit-transition: 0.4s;
+            -moz-transition: 0.4s;
+            -ms-transition: 0.4s;
+            -o-transition: 0.4s;
+            transition: 0.4s;
+            & > svg {
+                margin: -3px 0;
+            }
+        }
+        .border-effect {
+            width: 0;
+            height: 1px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            background: $blue;
+            -webkit-transition: 0.4s;
+            -moz-transition: 0.4s;
+            -ms-transition: 0.4s;
+            -o-transition: 0.4s;
+            transition: 0.4s;
+        }
+        &.in {
+            label {
+                opacity: 0;
+                top: 14px;
+                font-size: inherit;
+            }
+        }
+    }
+}
