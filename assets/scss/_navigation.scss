@@ -1,0 +1,44 @@
+.left{
+    nav {
+        background: $blue;
+        position: fixed;
+        width: 15%;
+        z-index: 2;
+        img{
+            width: 60%;
+            margin-left: 20%;
+            margin-bottom: 5%;
+            margin-top: 5%;
+        }
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-content: center;
+            height: 100vh;
+            li {
+                cursor: pointer;
+                -webkit-transition: 0.4s;
+                -moz-transition: 0.4s;
+                -ms-transition: 0.4s;
+                -o-transition: 0.4s;
+                transition: 0.4s;
+                a {
+                    display: block;
+                    padding: 20px;
+                    color: #fff;
+                    svg{
+                        padding: 0 10px 0 0;
+                        margin: -3px 0;
+                    }
+                }
+                &:hover {
+                    background: $blue-lighter;
+                }
+                &.nav-active{
+                    background: $blue-dark;
+                }
+            }
+        }
+    }
+}
