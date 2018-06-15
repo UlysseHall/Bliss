@@ -165,5 +165,7 @@ body {
       margin: 4vh 0;
       text-decoration: none;
       color: #646A77; }
+    .content-right .input-group .btn--register {
+      margin: 4vh 0 0; }
 
 /*# sourceMappingURL=base.css.map */
