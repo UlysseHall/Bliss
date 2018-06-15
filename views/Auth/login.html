@@ -34,4 +34,41 @@
         </form>
     </div>
 
+    <script>
+        var inputEffect = function() {
+
+            var inputs = document.querySelectorAll(".input-form input");
+            var inputgroups = document.querySelectorAll(".input-form");
+
+            if (inputs !== null) {
+                for (let i = 0; i < inputs.length; i++) {
+                    var input = inputs[i];
+
+                    if (input.value.length !== 0) {
+                        inputgroups[i].classList.add("in");
+                    }
+
+                    inputs[i].addEventListener("input", function () {
+                        if ( inputs[i].value.length === 0 ) {
+                            inputgroups[i].classList.remove("in");
+                        } else {
+                            inputgroups[i].classList.add("in");
+                        }
+                    });
+                    inputs[i].addEventListener("blur", function () {
+                        if ( inputs[i].value.length === 0 ) {
+                            inputgroups[i].classList.remove("in");
+                        }
+                    });
+                    inputs[i].addEventListener("click", function () {
+                        inputgroups[i].classList.add("in");
+                    });
+                }
+            }
+
+        };
+        window.onload = function () {
+            inputEffect();
+        };
+    </script>
 {% endblock %}
