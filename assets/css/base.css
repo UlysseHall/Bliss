@@ -202,6 +202,31 @@ body ul {
   color: #2e81e2;
 }
 
+.link {
+  text-decoration: none;
+  width: 180px;
+  text-align: center;
+  padding: 10px 0;
+  outline: none;
+  font: 16px "avenir";
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+.link-active {
+  background: #2e81e2;
+  border: 1px solid #2e81e2;
+  color: #fff;
+}
+.link:hover {
+  color: #2b78d0;
+}
+
 header {
   display: flex;
   align-items: baseline;
